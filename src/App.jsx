@@ -1,20 +1,19 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 import NavBar from "./components/NavBar"
 import ItemListContainer from "./components/ItemListContainer"
-import "./index.css"
+import ItemDetailContainer from "./components/ItemDetailContainer"
 
 function App() {
   return (
-    <>
+    <BrowserRouter>
       <NavBar />
-      <header className="bg-primary text-white text-center py-5">
-        <div className="container">
-          <h1 className="display-4">Bienvenido a MiEcommerce</h1>
-          <p className="lead">Los mejores juegos al mejor precio</p>
-          <button className="btn btn-light btn-lg">Ver productos</button>
-        </div>
-      </header>
-      <ItemListContainer greeting="¡Explora nuestros juegos destacados!" />
-    </>
+      <Routes>
+        <Route path="/" element={<ItemListContainer greeting="Bienvenidxs a la Tienda de Juegos" />} />
+        <Route path="/category/:categoryId" element={<ItemListContainer greeting="Filtrado por categoría" />} />
+        <Route path="/item/:id" element={<ItemDetailContainer />} />
+        <Route path="*" element={<h2 className="text-center mt-5">404 - Página no encontrada</h2>} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
