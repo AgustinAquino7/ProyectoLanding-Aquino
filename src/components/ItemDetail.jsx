@@ -1,14 +1,31 @@
+// src/components/ItemDetail.jsx
+import { useState } from "react"
 import ItemCount from "./ItemCount"
 
-function ItemDetail({ title, description, price, image }) {
+function ItemDetail({ id, title, description, price, image, stock = 10 }) {
+    const [added, setAdded] = useState(false) // para ocultar ItemCount al agregar
+    const [addedQty, setAddedQty] = useState(0)
+
     return (
-        <div className="card mb-3 mx-auto" style={{ maxWidth: "600px" }}>
-            <img src={image} alt={title} className="card-img-top" style={{ maxHeight: "400px", objectFit: "cover" }} />
-            <div className="card-body">
-                <h3>{title}</h3>
-                <p>{description}</p>
-                <p className="fw-bold">Precio: ${price}</p>
-                <ItemCount stock={10} initial={1} />
+        <div className="card mx-auto my-4" style={{ maxWidth: 900 }}>
+            <div className="row g-0">
+                <div className="col-md-5">
+                    <img src={image} className="img-fluid rounded-start" alt={title} />
+                </div>
+                <div className="col-md-7">
+                    <div className="card-body">
+                        <h3 className="card-title">{title}</h3>
+                        <p className="card-text">{description}</p>
+                        <p className="fw-bold">Precio: ${price.toFixed(2)}</p>
+                        {!added ? (
+                            <ItemCount stock={stock} initial={1} product={{ id, title, price, image }} onAdd={(qty) => { setAdded(true); setAddedQty(qty) }} />
+                        ) : (
+                            <div>
+                                <p className="text-success">Añadido {addedQty} unidad(es) al carrito ✅</p>
+                            </div>
+                        )}
+                    </div>
+                </div>
             </div>
         </div>
     )

@@ -1,54 +1,105 @@
-/* Fondo general */
-body {
-  background-color: #f8f9fa;
-  font-family: "Poppins", sans-serif;
+/* App.css - tema Halloween */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+  --bg: #0f0f0f;
+  --card: #1b1b2f;
+  --accent: #ff6b0a;
+  --muted: #cfcfcf;
 }
 
-/* Navbar */
-.navbar {
-  background: linear-gradient(90deg, #141e30, #243b55);
+body {
+  background: linear-gradient(180deg, #0b0b0b 0%, #151515 100%);
+  color: var(--muted);
+  font-family: 'Poppins', sans-serif;
+}
+
+.nav-halloween {
+  background: linear-gradient(90deg, #2b0b15, #18121f);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  color: var(--accent) !important;
+}
+
+.nav-link {
+  color: #e6e6e6 !important;
+}
+
+.footer {
+  background: #0b0b0b;
+  color: #bfbfbf;
+  padding: 20px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
 }
 
 /* Cards */
-.card {
-  transition: transform 0.3s, box-shadow 0.3s;
-  border-radius: 15px;
+.product-card {
+  background: linear-gradient(180deg, #121212, #1b1b2f);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  border-radius: 14px;
   overflow: hidden;
 }
-.card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+
+.product-card .card-body {
+  color: #f5f5f5;
 }
 
-/* Imagen de las cards */
-.card-img-top {
-  height: 250px;
+.product-card .card-title {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.product-card img {
+  height: 220px;
   object-fit: cover;
   transition: transform 0.4s;
 }
-.card-img-top:hover {
-  transform: scale(1.05);
+
+.product-card img:hover {
+  transform: scale(1.06);
 }
 
-/* Botones */
-.btn-primary {
-  background-color: #007bff;
+/* Buttons */
+.btn-warning {
+  background: var(--accent);
   border: none;
-  border-radius: 20px;
-  padding: 8px 20px;
-}
-.btn-primary:hover {
-  background-color: #0056b3;
 }
 
-/* Footer */
-.footer {
-  background: #141e30;
-  color: white;
-  padding: 20px;
-  text-align: center;
-  margin-top: 50px;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
+.btn-warning:hover {
+  background: #ff4a00;
 }
 
+/* Cart widget */
+.cart-widget {
+  border-radius: 50px;
+  padding: 8px 12px;
+}
+
+/* Item detail */
+.card {
+  background: linear-gradient(180deg, #121212, #1c1c2a);
+  border-radius: 12px;
+}
+
+/* Small halloween decorations */
+body::before {
+  content: "";
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 107, 10, 0.12), transparent 30%),
+    radial-gradient(circle at 70% 70%, rgba(0, 0, 0, 0.2), transparent 30%);
+  pointer-events: none;
+}
+
+/* Responsiveness tweaks */
+@media (max-width: 576px) {
+  .product-card img {
+    height: 180px;
+  }
+}

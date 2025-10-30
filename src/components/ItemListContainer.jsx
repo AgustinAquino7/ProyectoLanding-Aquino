@@ -1,30 +1,43 @@
+// src/components/ItemListContainer.jsx
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
-import { getProducts, getProductsByCategory } from "../data/products"
-import Item from "./Item"
+import ItemList from "./ItemList"
+import { db } from "../firebaseConfig"
+import { collection, getDocs, query, where } from "firebase/firestore"
 
 function ItemListContainer({ greeting }) {
-    const [items, setItems] = useState([])
     const { categoryId } = useParams()
+    const [items, setItems] = useState([])
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        const fetchData = categoryId ? getProductsByCategory(categoryId) : getProducts()
-        fetchData.then(res => setItems(res))
+        setLoading(true)
+        const productsRef = collection(db, "products")
+
+        const q = categoryId ? query(productsRef, where("category", "==", categoryId)) : productsRef
+
+        getDocs(q)
+            .then(snapshot => {
+                const prods = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }))
+                setItems(prods)
+            })
+            .catch(err => console.error(err))
+            .finally(() => setLoading(false))
     }, [categoryId])
 
+    if (loading) return <p className="text-center">Cargando productos...</p>
+    if (items.length === 0) return <p className="text-center">No hay productos en esta categoría.</p>
+
     return (
-        <div className="container py-4">
+        <>
             <h2 className="text-center mb-4">{greeting}</h2>
-            <div className="row g-4">
-                {items.map(product => (
-                    <Item key={product.id} {...product} />
-                ))}
-            </div>
-        </div>
+            <ItemList items={items} />
+        </>
     )
 }
 
 export default ItemListContainer
 
 
-    
+
+
