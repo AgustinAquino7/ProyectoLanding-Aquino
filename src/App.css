@@ -1,4 +1,4 @@
-/* App.css - tema Halloween */
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
 :root {
@@ -80,7 +80,7 @@ body {
 
 /* Item detail */
 .card {
-  background: linear-gradient(180deg, #121212, #1c1c2a);
+  background: linear-gradient(180deg, #ffffff, #1c1c2a);
   border-radius: 12px;
 }
 

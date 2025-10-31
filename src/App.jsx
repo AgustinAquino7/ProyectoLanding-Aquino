@@ -5,8 +5,10 @@ import ItemListContainer from "./components/ItemListContainer"
 import ItemDetailContainer from "./components/ItemDetailContainer"
 import Cart from "./components/Cart"
 import CheckoutForm from "./components/CheckoutForm"
+import app from "./data/firebase"
 
 function App() {
+  console.log("Init Firebase", app)
   return (
     <BrowserRouter>
       <NavBar />
@@ -22,7 +24,7 @@ function App() {
       </main>
       <footer className="footer">
         <div className="container">
-          <p>Mi Tienda Halloween 🎃 - Hecho con React y Firestore</p>
+          <p>Mi Tienda Halloween 🎃 - TODOS LOS DERECHOS RESERVASOS 2025</p>
         </div>
       </footer>
     </BrowserRouter>
