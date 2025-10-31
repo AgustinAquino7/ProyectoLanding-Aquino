@@ -1,4 +1,3 @@
-// src/components/ItemCount.jsx
 import { useState, useContext } from "react"
 import { CartContext } from "../context/CartContext"
 

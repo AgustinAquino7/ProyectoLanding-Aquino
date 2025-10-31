@@ -35,7 +35,7 @@ body {
   border-top: 1px solid rgba(255, 255, 255, 0.03);
 }
 
-/* Cards */
+
 .product-card {
   background: linear-gradient(180deg, #121212, #1b1b2f);
   border: 1px solid rgba(255, 255, 255, 0.03);
@@ -62,7 +62,7 @@ body {
   transform: scale(1.06);
 }
 
-/* Buttons */
+
 .btn-warning {
   background: var(--accent);
   border: none;
@@ -72,19 +72,19 @@ body {
   background: #ff4a00;
 }
 
-/* Cart widget */
+
 .cart-widget {
   border-radius: 50px;
   padding: 8px 12px;
 }
 
-/* Item detail */
+
 .card {
   background: linear-gradient(180deg, #ffffff, #1c1c2a);
   border-radius: 12px;
 }
 
-/* Small halloween decorations */
+
 body::before {
   content: "";
   position: fixed;
@@ -97,7 +97,7 @@ body::before {
   pointer-events: none;
 }
 
-/* Responsiveness tweaks */
+
 @media (max-width: 576px) {
   .product-card img {
     height: 180px;

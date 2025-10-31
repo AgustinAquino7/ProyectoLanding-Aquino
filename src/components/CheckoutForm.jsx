@@ -1,4 +1,3 @@
-// src/components/CheckoutForm.jsx
 import { useContext, useState } from "react"
 import { CartContext } from "../context/CartContext"
 import { collection, addDoc, serverTimestamp } from "firebase/firestore"

@@ -1,4 +1,3 @@
-// src/components/ItemListContainer.jsx
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import ItemList from "./ItemList"

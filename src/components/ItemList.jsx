@@ -1,4 +1,3 @@
-// src/components/ItemList.jsx
 import Item from "./Item"
 
 function ItemList({ items }) {
