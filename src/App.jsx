@@ -23,7 +23,7 @@ function App() {
       </main>
       <footer className="footer">
         <div className="container">
-          <p>Mi Tienda Halloween 🎃 - TODOS LOS DERECHOS RESERVASOS 2025</p>
+          <p>SHYNRAXSTORE 🎃 - TODOS LOS DERECHOS RESERVADOS 2025</p>
         </div>
       </footer>
     </BrowserRouter>

@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom"
 import { doc, getDoc } from "firebase/firestore"
 import { db } from "../firebaseConfig"
 import ItemDetail from "./ItemDetail"
+import { getProducts } from "../data/products"
 
 function ItemDetailContainer() {
     const { id } = useParams()

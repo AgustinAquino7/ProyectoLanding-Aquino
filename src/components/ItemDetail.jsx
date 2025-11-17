@@ -2,7 +2,7 @@ import { useState } from "react"
 import ItemCount from "./ItemCount"
 
 function ItemDetail({ id, title, description, price, image, stock = 10 }) {
-    const [added, setAdded] = useState(false) // para ocultar ItemCount al agregar
+    const [added, setAdded] = useState(false) 
     const [addedQty, setAddedQty] = useState(0)
 
     return (

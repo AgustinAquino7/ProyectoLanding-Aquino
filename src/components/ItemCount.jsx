@@ -10,7 +10,7 @@ function ItemCount({ stock, initial = 1, product, onAdd }) {
 
     const handleAdd = () => {
         addToCart(product, count)
-        if (onAdd) onAdd(count) // notificar al padre para ocultar ItemCount
+        if (onAdd) onAdd(count) 
     }
 
     return (
